@@ -1,0 +1,41 @@
+[09-Jun-2018 04:23:21 UTC] PHP Warning:  require(includes/pre-html.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/recipes/new-recipe.php on line 2
+[09-Jun-2018 04:23:21 UTC] PHP Stack trace:
+[09-Jun-2018 04:23:21 UTC] PHP   1. {main}() /home/ubuntu/workspace/recipes/new-recipe.php:0
+[09-Jun-2018 04:23:21 UTC] PHP Fatal error:  require(): Failed opening required 'includes/pre-html.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/recipes/new-recipe.php on line 2
+[09-Jun-2018 04:23:21 UTC] PHP Stack trace:
+[09-Jun-2018 04:23:21 UTC] PHP   1. {main}() /home/ubuntu/workspace/recipes/new-recipe.php:0
+[09-Jun-2018 04:23:40 UTC] PHP Warning:  require(/includes/pre-html.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/recipes/new-recipe.php on line 2
+[09-Jun-2018 04:23:40 UTC] PHP Stack trace:
+[09-Jun-2018 04:23:40 UTC] PHP   1. {main}() /home/ubuntu/workspace/recipes/new-recipe.php:0
+[09-Jun-2018 04:23:40 UTC] PHP Fatal error:  require(): Failed opening required '/includes/pre-html.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/recipes/new-recipe.php on line 2
+[09-Jun-2018 04:23:40 UTC] PHP Stack trace:
+[09-Jun-2018 04:23:40 UTC] PHP   1. {main}() /home/ubuntu/workspace/recipes/new-recipe.php:0
+[09-Jun-2018 04:23:56 UTC] PHP Warning:  require(includes/config.inc.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/recipes/new-recipe.php on line 3
+[09-Jun-2018 04:23:56 UTC] PHP Stack trace:
+[09-Jun-2018 04:23:56 UTC] PHP   1. {main}() /home/ubuntu/workspace/recipes/new-recipe.php:0
+[09-Jun-2018 04:23:56 UTC] PHP Fatal error:  require(): Failed opening required 'includes/config.inc.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/recipes/new-recipe.php on line 3
+[09-Jun-2018 04:23:56 UTC] PHP Stack trace:
+[09-Jun-2018 04:23:56 UTC] PHP   1. {main}() /home/ubuntu/workspace/recipes/new-recipe.php:0
+[07-Jul-2018 23:37:56 UTC] PHP Fatal error:  Call to undefined function cl_image_tag() in /home/ubuntu/workspace/helpers/deliver_avatar_image.php on line 2
+[07-Jul-2018 23:37:56 UTC] PHP Stack trace:
+[07-Jul-2018 23:37:56 UTC] PHP   1. {main}() /home/ubuntu/workspace/helpers/deliver_avatar_image.php:0
+[07-Jul-2018 23:38:23 UTC] PHP Warning:  require(includes/config.inc.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/helpers/deliver_avatar_image.php on line 2
+[07-Jul-2018 23:38:23 UTC] PHP Stack trace:
+[07-Jul-2018 23:38:23 UTC] PHP   1. {main}() /home/ubuntu/workspace/helpers/deliver_avatar_image.php:0
+[07-Jul-2018 23:38:23 UTC] PHP Fatal error:  require(): Failed opening required 'includes/config.inc.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/helpers/deliver_avatar_image.php on line 2
+[07-Jul-2018 23:38:23 UTC] PHP Stack trace:
+[07-Jul-2018 23:38:23 UTC] PHP   1. {main}() /home/ubuntu/workspace/helpers/deliver_avatar_image.php:0
+[07-Jul-2018 23:38:44 UTC] PHP Warning:  require(/includes/config.inc.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/helpers/deliver_avatar_image.php on line 2
+[07-Jul-2018 23:38:44 UTC] PHP Stack trace:
+[07-Jul-2018 23:38:44 UTC] PHP   1. {main}() /home/ubuntu/workspace/helpers/deliver_avatar_image.php:0
+[07-Jul-2018 23:38:44 UTC] PHP Fatal error:  require(): Failed opening required '/includes/config.inc.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/helpers/deliver_avatar_image.php on line 2
+[07-Jul-2018 23:38:44 UTC] PHP Stack trace:
+[07-Jul-2018 23:38:44 UTC] PHP   1. {main}() /home/ubuntu/workspace/helpers/deliver_avatar_image.php:0
+[07-Jul-2018 23:38:59 UTC] PHP Warning:  require(vendor/cloudinary/cloudinary_php/src/Cloudinary.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/includes/config.inc.php on line 24
+[07-Jul-2018 23:38:59 UTC] PHP Stack trace:
+[07-Jul-2018 23:38:59 UTC] PHP   1. {main}() /home/ubuntu/workspace/helpers/deliver_avatar_image.php:0
+[07-Jul-2018 23:38:59 UTC] PHP   2. require() /home/ubuntu/workspace/helpers/deliver_avatar_image.php:2
+[07-Jul-2018 23:38:59 UTC] PHP Fatal error:  require(): Failed opening required 'vendor/cloudinary/cloudinary_php/src/Cloudinary.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/includes/config.inc.php on line 24
+[07-Jul-2018 23:38:59 UTC] PHP Stack trace:
+[07-Jul-2018 23:38:59 UTC] PHP   1. {main}() /home/ubuntu/workspace/helpers/deliver_avatar_image.php:0
+[07-Jul-2018 23:38:59 UTC] PHP   2. require() /home/ubuntu/workspace/helpers/deliver_avatar_image.php:2
