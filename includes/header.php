@@ -14,6 +14,6 @@
 
 
     <?php
-include "/home/ubuntu/workspace/tempstylesheets.php";
+include "tempstylesheets.php";
 ?>
 </head>
