@@ -10,7 +10,9 @@
       </div>
       <div class="modal-body">
         
-        
+      <div class="alert alert-danger hidden" role="alert" id="login_errors">
+  
+      </div>
         
         
         <form action="perform-login.php" method="post" id="login_form" novalidate>

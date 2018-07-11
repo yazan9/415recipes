@@ -42,6 +42,11 @@ $(function(){
                 if(response == "success"){
                     window.location.href = "/";
                 }
+                else{
+                    //there are errors
+                    $('#login_errors').show();
+                    $('#login_errors').html("Inavild email/password combination");
+                }
             };
             $.ajax(options);
             //return false;

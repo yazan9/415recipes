@@ -1,2 +1,4 @@
 vendor/cloudinary/cloudinary_php
 dump.sql
+dump2.sql
+mysqli_connect.php
