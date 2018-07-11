@@ -1,10 +1,10 @@
 <?php
 
 // Set the database access information as constants:
-DEFINE ('DB_USER', 'webuser');
-DEFINE ('DB_PASSWORD', 'password1234');
-DEFINE ('DB_HOST', 'localhost');
-DEFINE ('DB_NAME', 'recipes');
+DEFINE ('DB_USER', 'b03be54a148811');
+DEFINE ('DB_PASSWORD', '7df1de44');
+DEFINE ('DB_HOST', 'us-cdbr-iron-east-04.cleardb.net');
+DEFINE ('DB_NAME', 'heroku_1ff56ad2e674a12');
 
 // Make the connection:
 $dbc = @mysqli_connect (DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
