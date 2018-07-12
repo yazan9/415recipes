@@ -163,7 +163,7 @@ include "login-modal.php";
     foreach($ingredients as $ingredient){
       $display = "<div class=\"row justify-content-center description-text\">";
       $display.= "<div class=\"col-3 text-right\">";
-      $display.= "<strong>{$ingredient["ingredient_unit"]}</strong>";
+      $display.= "<strong>{$ingredient["ingredient_unit"]} {$ingredient["ingredient_quantity"]}</strong>";
       $display.= "</div>";
       $display.= "<div class=\"col-3\">";
       $display.= "{$ingredient["ingredient_description"]}";

@@ -15,7 +15,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     //various arrays:
     $errors = array();
     $time_units = array("Seconds", "Minutes", "Hours", "Days");
-    $quantity_units = array("gm", "kg", "lt", "lbs", "ml", "tsp", "tbsp", "unit/other");
     $ingredients = array();
     $steps = array();
     $notes = array();

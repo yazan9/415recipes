@@ -20,7 +20,7 @@ include "login-modal.php";
     <div class="col-sm">
         <div class="main-intro">
       <h1 class="display-1 white-text">Everyday<br>Recipes</h1><br>
-      <h4 class="white-text">Start your weekday mornings off right with these quick and easy breakfast ideas!</h4>
+      <h4 class="white-text">Enjoy our collection of healthy and delicious recipes and ideas. For everyday, and every occasion!</h4>
       <br>
       <a class="btn btn-outline-light btn-lg" href="/view-recipes.php" role="button"> See our delicious recipes</a>
       <br><br>

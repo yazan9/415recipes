@@ -24,7 +24,7 @@ include "includes/navbar.php";
 include "signup-modal.php";
 include "login-modal.php";
 ?>
-<script src="/js/add_recipe.js?v=6"></script>
+<script src="/js/add_recipe.js?v=7"></script>
     <div class="container-fluid">
     <div class="row justify-content-center align-items-center bottom-distance-5">
     </div>

@@ -32,7 +32,6 @@ if(!recipe_belongs_to_user($recipe_id,$current_user_id,$dbc)){
 
 //set some arrays for the dropdowns
 $time_units = array("Seconds", "Minutes", "Hours", "Days");
-$quantity_units = array("gm", "kg", "lt", "lbs", "ml", "tsp", "tbsp", "unit/other");
 
 //all is well, fetch the recipes:
 $errors = array();
@@ -118,7 +117,7 @@ include "signup-modal.php";
 include "login-modal.php";
 
 ?>
-<script src="/js/edit_recipe.js?v=3"></script>
+<script src="/js/edit_recipe.js?v=4"></script>
     <div class="container-fluid">
     <div class="row justify-content-center align-items-center bottom-distance-5">
     </div>

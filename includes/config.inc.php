@@ -18,7 +18,7 @@ date_default_timezone_set ('US/Western');
 // ************ SETTINGS ************ //
 // ********************************** //
 $time_units = array("Seconds", "Minutes", "Hours", "Days");
-$quantity_units = array("gm", "kg", "lt", "lbs", "ml", "tsp", "tbsp", "unit/other");
+$quantity_units = array("gm", "kg", "lt", "lbs", "ml", "tsp", "tbsp", "piece", "can", "bunch", "unit/other");
 
 //Cloudinary
 require 'vendor/cloudinary/cloudinary_php/src/Cloudinary.php';
@@ -30,6 +30,7 @@ require 'vendor/cloudinary/cloudinary_php/src/Api.php';
   "api_key" => "672873823841822", 
   "api_secret" => "r2csBYQCb3R3cW0cPkc7OBKhCR4" 
 ));
+
 
 // ************ FUNCTIONS ************ //
 // ********************************** //

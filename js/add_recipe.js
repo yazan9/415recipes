@@ -48,7 +48,7 @@ $(function(){
         new_ingredient+= "<label for=\"Ingredient\" class=\"modal-text\">Unit</label>";
         new_ingredient+= "<select class=\"form-control form-control-lg\" id=\"new_ingredient_unit_" + ingredient_no + "\" name=\"new_ingredient_unit_" + ingredient_no + "\">";
         new_ingredient+= "<option value=\"0\" selected>Choose...</option>";
-        new_ingredient+= "<option value=\"gm\">gm</option><option value=\"kg\">kg</option><option value=\"lbs\">lbs</option><option value=\"lt\">lt</option><option value=\"ml\">ml</option><option value=\"tsp\">tsp</option><option value=\"tbsp\">tbsp</option><option value=\"unit/other\">unit/other</option>";
+        new_ingredient+= "<option value=\"gm\">gm</option><option value=\"kg\">kg</option><option value=\"lbs\">lbs</option><option value=\"lt\">lt</option><option value=\"ml\">ml</option><option value=\"tsp\">tsp</option><option value=\"tbsp\">tbsp</option><option value=\"piece\">piece</option><option value=\"can\">can</option><option value=\"bunch\">bunch</option><option value=\"unit/other\">unit/other</option>";
         new_ingredient+= "</select>";
         new_ingredient+= "</div>"; //end of column
         
