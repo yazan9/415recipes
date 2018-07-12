@@ -45,7 +45,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if(startsWith($key, 'new_ingredient_') && !startsWith($key, 'new_ingredient_quantity_') && !startsWith($key, 'new_ingredient_unit_')){
 
             //read ingredient number:
-            $ingredient_number = substr($key,-1);
+            $ingredient_number = substr($key, 15);
             
             //get ingredient related values:
             $ingredient_description = mysqli_real_escape_string($dbc, $_POST[$key]);
