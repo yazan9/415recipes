@@ -84,7 +84,8 @@ $(function(){
                 }
                 else {
                     $('#registration_errors').show();
-                    $('#registration_errors').html("Oops, something went wrong...");
+                    //$('#registration_errors').html("Oops, something went wrong...");
+                    $('#registration_errors').html(response);
                 }
             };
             $.ajax(options);
