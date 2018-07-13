@@ -2,6 +2,7 @@
 function send_activation_email($email_address, $activation_code){
 require("vendor/phpmailer/phpmailer/src/PHPMailer.php");
 require("vendor/phpmailer/phpmailer/src/SMTP.php");
+require("vendor/autoload.php");
 require "includes/config.inc.php";
 
 $body = "<p>Thank you for registering with 415 Recipes! Please click on the link below to activate your account:</p><br>".
