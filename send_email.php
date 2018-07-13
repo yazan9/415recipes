@@ -24,7 +24,7 @@ $body = "<p>Thank you for registering with 415 Recipes! Please click on the link
     $mail->AddAddress($email_address);
 
      if(!$mail->Send()) {
-        //echo "Mailer Error: " . $mail->ErrorInfo;
+        echo "Mailer Error: " . $mail->ErrorInfo;
      } else {
         echo "S040";
      }
@@ -53,9 +53,9 @@ $body = "<p>Your temporary password is:</p><br><strong>{$password}</strong><br>P
     $mail->AddAddress($email_address);
 
      if(!$mail->Send()) {
-        //echo "Mailer Error: " . $mail->ErrorInfo;
+        echo "Mailer Error: " . $mail->ErrorInfo;
      } else {
-        //echo "S040";
+        echo "S040";
      }
 }
 ?>
