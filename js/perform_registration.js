@@ -66,7 +66,7 @@ $(function(){
             //build the option for the AJAX request
             var options = new Object();
             options.data = data;
-            options.url = "perform-registration.php";
+            options.url = "/perform-registration.php";
             options.dataType = 'text';
             options.type = 'post';
             options.success = function(response){
