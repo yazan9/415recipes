@@ -8,7 +8,7 @@ define('EMAIL', 'yazan.khalaileh@gmail.com');
 
 // Site URL (base for all redirections):
 //define ('BASE_URL', "https://recipes415-chilivote.c9users.io/");
-define ('BASE_URL', $_SERVER['SERVER_NAME']);
+define ('BASE_URL', $_SERVER['SERVER_NAME']."/");
 
 // Location of the MySQL connection script:
 define ('MYSQL', 'mysqli_connect.php');
