@@ -15,7 +15,7 @@ else{
 <?php 
 //check if user logged in:
 if (!is_logged_in()){
-  header("Location:/login-modal.php");
+  header("Location:/login.php");
   exit();
 }
 
