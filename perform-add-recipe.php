@@ -208,7 +208,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         
         //process notes
         //check for multiple notes:
-        if(count($notes>0)){
+        if(count($notes)>0){
             //build the query
             $q4 = "INSERT INTO notes (recipe_id, description) VALUES";
             
