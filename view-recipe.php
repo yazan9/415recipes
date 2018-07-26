@@ -15,7 +15,6 @@ else{
 <?php 
 //set some arrays for the drop downs
 $time_units = array("Seconds", "Minutes", "Hours", "Days");
-$quantity_units = array("gm", "kg", "lt", "lbs", "ml", "tsp", "tbsp", "unit/other");
 
 //open database connection
 require(MYSQL);
@@ -53,8 +52,7 @@ $q = "SELECT * FROM ingredients WHERE recipe_id = '$recipe_id'";
 $r = mysqli_query($dbc,$q) or trigger_error("error accessing database 11");
 if(mysqli_num_rows($r) > 0){
   while($row = mysqli_fetch_assoc($r)) {
-    $new_array = array("ingredient_description" => $row["name"], "ingredient_quantity" => $row["quantity"], "ingredient_unit" => $row["quantity_unit"]);
-    array_push($ingredients, $new_array);
+    array_push($ingredients, $row["name"]);
   }
   mysqli_free_result($r);
 }
@@ -160,17 +158,17 @@ include "login-modal.php";
     </div>   
 
     <?php
+    $ingredients_counter = 1;
+    $display = "<div class=\"row justify-content-center align-items-center bottom-distance-5\">";
     foreach($ingredients as $ingredient){
-      $display = "<div class=\"row justify-content-center description-text\">";
-      $display.= "<div class=\"col-3 text-right\">";
-      $display.= "<strong>{$ingredient["ingredient_unit"]} {$ingredient["ingredient_quantity"]}</strong>";
-      $display.= "</div>";
-      $display.= "<div class=\"col-3\">";
-      $display.= "{$ingredient["ingredient_description"]}";
-      $display.= "</div>";
-      $display.= "</div>";
+      $display .= "<div class=\"width-70\">";
+      $display .= "<p class=\"description-text\">$ingredient</p>";
+      $display .= "</div>";
+      
+      $ingredients_counter++;
+      }
+      $display .= "</div>";
       echo $display;
-    }
     ?>
        
   <div class="row justify-content-center align-items-center bottom-distance-5">

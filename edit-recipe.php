@@ -62,8 +62,7 @@ $q = "SELECT * FROM ingredients WHERE recipe_id = '$recipe_id'";
 $r = mysqli_query($dbc,$q) or trigger_error("error accessing database 11");
 if(mysqli_num_rows($r) > 0){
   while($row = mysqli_fetch_assoc($r)) {
-    $new_array = array("ingredient_description" => $row["name"], "ingredient_quantity" => $row["quantity"], "ingredient_unit" => $row["quantity_unit"]);
-    array_push($ingredients, $new_array);
+    array_push($ingredients, $row["name"]);
   }
   mysqli_free_result($r);
 }
@@ -117,7 +116,7 @@ include "signup-modal.php";
 include "login-modal.php";
 
 ?>
-<script src="/js/edit_recipe.js?v=4"></script>
+<script src="/js/edit_recipe.js?v=5"></script>
     <div class="container-fluid">
     <div class="row justify-content-center align-items-center bottom-distance-5">
     </div>
@@ -215,29 +214,11 @@ include "login-modal.php";
     $ingredient_counter = 1;
     foreach($ingredients as $ingredient){
       $new_ingredient = "<div class=\"form-row bottom-distance-5\" id=\"new_ingredient_div_$ingredient_counter\">";
-      $new_ingredient.= "<div class=\"form-group col-md-5\">";
+      $new_ingredient.= "<div class=\"form-group col-md-11\">";
       $new_ingredient.= "<label for=\"Ingredient\" class=\"modal-text ingredients_input\">Ingredient</label>";
-      $new_ingredient.= "<input class=\"form-control form-control-lg\" id=\"new_ingredient_" . $ingredient_counter . "\" name=\"new_ingredient_" . $ingredient_counter . "\" placeholder=\"What is it?\" type=\"text\" value=\"".$ingredient['ingredient_description']."\"/>";
+      $new_ingredient.= "<input class=\"form-control form-control-lg\" id=\"new_ingredient_" . $ingredient_counter . "\" name=\"new_ingredient_" . $ingredient_counter . "\" placeholder=\"What is it?\" type=\"text\" value=\"".$ingredient."\"/>";
       $new_ingredient.= "</div>"; //end of column
         
-      $new_ingredient.= "<div class=\"form-group col-md-3\">";
-      $new_ingredient.= "<label for=\"Ingredient\" class=\"modal-text\">Quantity</label>";
-      $new_ingredient.= "<input class=\"form-control form-control-lg\" id=\"new_ingredient_quantity_" . $ingredient_counter . "\" name=\"new_ingredient_quantity_" . $ingredient_counter . "\" placeholder=\"How much?\" type=\"number\" value=\"".$ingredient['ingredient_quantity']."\"/>";
-      $new_ingredient.= "</div>"; //end of column
-        
-      $new_ingredient.= "<div class=\"form-group col-md-3\">";
-      $new_ingredient.= "<label for=\"Ingredient\" class=\"modal-text\">Unit</label>";
-      $new_ingredient.= "<select class=\"form-control form-control-lg\" id=\"new_ingredient_unit_" . $ingredient_counter . "\" name=\"new_ingredient_unit_" . $ingredient_counter . "\">";
-
-      $new_ingredient.= "<option value=0".($ingredient['ingredient_unit'] == null? " selected":"").">"."Choose..."."</option>";
-      foreach($quantity_units as $quantity_unit){
-        $new_ingredient.= "<option value="."'".$quantity_unit."'".($ingredient['ingredient_unit'] == $quantity_unit? "selected" : "").">".$quantity_unit."</option>";
-      }
-      //$new_ingredient.= "<option value=\"gm\">gm</option><option value=\"kg\">kg</option><option value=\"lbs\">lbs</option><option value=\"lt\">lt</option><option value=\"ml\">ml</option><option value=\"tsp\">tsp</option><option value=\"tbsp\">tbsp</option><option value=\"unit/other\">unit/other</option>";
-      
-      $new_ingredient.= "</select>";
-      $new_ingredient.= "</div>"; //end of column
-      
       $new_ingredient.= "<div class=\"form-group col-md-1\">";
       $new_ingredient.= "<button type=\"button\" class=\"btn btn-large btn-outline-danger remove_button\" onclick=\"RemoveIngredient($ingredient_counter);\">x</button>";
       $new_ingredient.= "</div>"; //end of column

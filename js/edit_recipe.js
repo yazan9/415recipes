@@ -31,25 +31,10 @@ $(function(){
         var ingredient_no = $('#recipe_ingredients .ingredients_input').length+1;
         
         //add input for the new ingredient
-        //var new_ingredient = "<label for=\"new_ingredient_"+ingredient_no+"\" class=\"modal-text ingredients_input\">Ingredient "+ingredient_no+"</label><textarea class=\"form-control\" id=\"new_ingredient_"+ingredient_no+"\" rows=\"3\"></textarea>";
-        
         var new_ingredient = "<div class=\"form-row bottom-distance-5\" id=\"new_ingredient_div_" + ingredient_no +"\">";
-        new_ingredient+= "<div class=\"form-group col-md-5\">";
+        new_ingredient+= "<div class=\"form-group col-md-11\">";
         new_ingredient+= "<label for=\"Ingredient\" class=\"modal-text ingredients_input\">Ingredient</label>";
         new_ingredient+= "<input class=\"form-control form-control-lg\" id=\"new_ingredient_" + ingredient_no + "\" name=\"new_ingredient_" + ingredient_no + "\" placeholder=\"What is it?\" type=\"text\"/>";
-        new_ingredient+= "</div>"; //end of column
-        
-        new_ingredient+= "<div class=\"form-group col-md-3\">";
-        new_ingredient+= "<label for=\"Ingredient\" class=\"modal-text\">Quantity</label>";
-        new_ingredient+= "<input class=\"form-control form-control-lg\" id=\"new_ingredient_quantity_" + ingredient_no + "\" name=\"new_ingredient_quantity_" + ingredient_no + "\" placeholder=\"How much?\" type=\"number\"/>";
-        new_ingredient+= "</div>"; //end of column
-        
-        new_ingredient+= "<div class=\"form-group col-md-3\">";
-        new_ingredient+= "<label for=\"Ingredient\" class=\"modal-text\">Unit</label>";
-        new_ingredient+= "<select class=\"form-control form-control-lg\" id=\"new_ingredient_unit_" + ingredient_no + "\" name=\"new_ingredient_unit_" + ingredient_no + "\">";
-        new_ingredient+= "<option value=\"0\" selected>Choose...</option>";
-        new_ingredient+= "<option value=\"gm\">gm</option><option value=\"kg\">kg</option><option value=\"lbs\">lbs</option><option value=\"lt\">lt</option><option value=\"ml\">ml</option><option value=\"tsp\">tsp</option><option value=\"tbsp\">tbsp</option><option value=\"piece\">piece</option><option value=\"can\">can</option><option value=\"bunch\">bunch</option><option value=\"unit/other\">unit/other</option>";
-        new_ingredient+= "</select>";
         new_ingredient+= "</div>"; //end of column
         
         new_ingredient+= "<div class=\"form-group col-md-1\">";

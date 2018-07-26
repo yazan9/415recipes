@@ -58,20 +58,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     foreach($_POST as $key => $val)
     {
         //user added an ingredient
-        if(startsWith($key, 'new_ingredient_') && !startsWith($key, 'new_ingredient_quantity_') && !startsWith($key, 'new_ingredient_unit_')){
+        if(startsWith($key, 'new_ingredient_')){
 
             //read ingredient number:
             $ingredient_number = substr($key,15);
             
             //get ingredient related values:
             $ingredient_description = mysqli_real_escape_string($dbc, $_POST[$key]);
-            $ingredient_quantity = mysqli_real_escape_string($dbc, $_POST["new_ingredient_quantity_".$ingredient_number]);
-            $ingredient_unit = mysqli_real_escape_string($dbc, $_POST["new_ingredient_unit_".$ingredient_number]);
-            
+
             //check all values
-            if(trim(strlen($ingredient_description))>0 && is_numeric($ingredient_quantity) && in_array($ingredient_unit, $quantity_units)){
-                $new_array = array("ingredient_description" => $ingredient_description, "ingredient_quantity" => $ingredient_quantity, "ingredient_unit" => $ingredient_unit);
-                array_push($ingredients, $new_array);
+            if(trim(strlen($ingredient_description))>0){
+                array_push($ingredients, $ingredient_description);
                 $no_ingredients = false;
             }
         }
@@ -187,9 +184,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $recipe_id = mysqli_insert_id($dbc);
         
         //build the query for multiple ingredients
-        $q2 = "INSERT INTO ingredients (recipe_id, name, quantity, quantity_unit) VALUES";
+        $q2 = "INSERT INTO ingredients (recipe_id, name) VALUES";
         foreach($ingredients as $ingredient){
-            $q2.= "('$recipe_id','{$ingredient['ingredient_description']}','{$ingredient['ingredient_quantity']}','{$ingredient['ingredient_unit']}'),";
+            $q2.= "('$recipe_id','$ingredient'),";
         }
         
         //remove the last comma
