@@ -203,6 +203,7 @@ include "login-modal.php";
     
     <?php
     $notes_counter = 1;
+    if(count($notes != 0)){
     foreach($notes as $note){
       $display = "<div class=\"row justify-content-center align-items-center bottom-distance-5\">";
       $display .= "<div class=\"width-70\">";
@@ -212,6 +213,11 @@ include "login-modal.php";
       
       echo $display;
     }
+    }// end if
+    else{
+      
+    }
+    
     ?>
        
   <div class="row bg-black">

@@ -49,10 +49,19 @@ function display_yummy_recipes($recipes, $size){
             $recipes_counter=0;
             $beginning_of_raw = true;
             
+            //to be used if there is no image to display
+            $description = "";
+            
             echo "<div class = \"row bottom-distance-5 justify-content-center\">";
             
             foreach($recipes as $recipe){
-              $img = cl_image_tag($recipe["img"], array("class" => "img-fluid mx-auto d-block card-img-top", "width"=>250, "height"=>250, "background"=>"black", "crop"=>"pad"));
+              if($recipe["img"] != ""){
+                $img = cl_image_tag($recipe["img"], array("class" => "img-fluid mx-auto d-block card-img-top", "width"=>250, "height"=>250, "background"=>"black", "crop"=>"pad"));
+              }
+              else{
+                $img = "";
+                $description = $recipe["description"];
+              }
               $output="";
   
               if($recipes_counter%3 == 0){
@@ -64,7 +73,7 @@ function display_yummy_recipes($recipes, $size){
               
               <div class=\"card card-spacing\" style=\"width: $size\">$img<div class=\"card-body d-flex flex-column\">
                     <a href = '/view-recipe.php?id=".$recipe['recipe_id']."' class='linked-text'><h2 class=\"card-title\">".$recipe['recipe_name']."</h2></a>
-                    ".display_avatar_small($recipe['avatar'], $recipe['first_name']." ".$recipe['last_name'], $recipe['posted_on'], $recipe['user_id'])."
+                    ".$description.display_avatar_small($recipe['avatar'], $recipe['first_name']." ".$recipe['last_name'], $recipe['posted_on'], $recipe['user_id'])."
                   </div>
               </div>
               

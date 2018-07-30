@@ -103,6 +103,9 @@ if(!empty($errors)){
   exit();
 }
 
+//upload image placeholder:
+$img = cl_image_tag("Placeholder");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
