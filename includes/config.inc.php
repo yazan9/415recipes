@@ -59,6 +59,16 @@ function recipe_belongs_to_user($recipe_id, $user_id, $dbc){
 	else return false;
 }
 
+function is_owner_of_profile($viewed_user_id){
+	if(isset($_SESSION['user_id']) && $viewed_user_id == $_SESSION['user_id']){
+		return true;
+	}
+	else{
+		return false;
+	}
+	
+}
+
 function textTruncate($string, $desired_width) {
   $parts = preg_split('/([\s\n\r]+)/', $string, null, PREG_SPLIT_DELIM_CAPTURE);
   $parts_count = count($parts);

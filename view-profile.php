@@ -7,8 +7,14 @@ $page_title = "415 Recipes";
 //set user id
 if(isset($_GET['id'])){
     $user_id = $_GET['id'];
+    if(is_owner_of_profile($user_id)){
+        $is_owner = true;
+    }
+    else{
+        $is_owner = false;
+    }
 }
-else if(isset($_SESSION['user_id'])){
+elseif(isset($_SESSION['user_id'])){
     $user_id = $_SESSION['user_id'];
     $is_owner = true;
 }
