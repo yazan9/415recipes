@@ -141,11 +141,10 @@ include "login-modal.php";
     
     <div class="row bottom-distance-5 justify-content-center">
     <div class="col-4">
-
     <form action="perform-edit-recipe.php?recipe_id=<?php echo $recipe_id?>" method="post" id="edit_recipe_form">
   <div class="form-group bottom-distance-5">
     <label for="RecipeName" class="modal-text">Name Your Recipe*</label>
-    <input class="form-control form-control-lg" id="RecipeName" name="RecipeName" placeholder="Yummy thing ..." value=<?php echo $name?>>
+    <input class="form-control form-control-lg" id="RecipeName" name="RecipeName" placeholder="Yummy thing ..." value="<?php echo $name?>">
      <div class="invalid-feedback">
         Please provide a name for your recipe
     </div>
