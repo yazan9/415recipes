@@ -140,6 +140,18 @@ function display_avatar_big($avatar, $username){
 	return $output;
 }
 
+function display_recipe_image($image)
+{
+	$img = "";
+	if($image != ""){
+    	$img = cl_image_tag($image, array("class" => "img-fluid mx-auto d-block card-img-top", "crop" => "crop", "gravity"=>"custom"));
+    }
+    else{
+    	$img = cl_image_tag(NO_IMAGE_RECIPE, array("class" => "img-fluid mx-auto d-block card-img-top", "crop" => "crop", "gravity"=>"custom"));
+    }
+    return $img;
+}
+
 // ****************************************** //
 // ************ ERROR MANAGEMENT ************ //
 

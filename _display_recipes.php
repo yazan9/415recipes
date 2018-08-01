@@ -8,7 +8,13 @@ function display_featured_recipes($recipes, $size){
             
             foreach($recipes as $recipe){
               $output="";
-              $img = cl_image_tag($recipe["img"], array("class" => "img-fluid mx-auto d-block card-img-top", "crop" => "crop", "gravity"=>"custom"));
+              if($recipe["img"] != ""){
+                $img = cl_image_tag($recipe["img"], array("class" => "img-fluid mx-auto d-block card-img-top", "crop" => "crop", "gravity"=>"custom"));
+              }
+              else{
+                $img = cl_image_tag(NO_IMAGE_RECIPE, array("class" => "img-fluid mx-auto d-block card-img-top", "crop" => "crop", "gravity"=>"custom"));
+              }
+  
   
               if($recipes_counter%3 == 0){
                 $output .= "</div>";
@@ -59,8 +65,7 @@ function display_yummy_recipes($recipes, $size){
                 $img = cl_image_tag($recipe["img"], array("class" => "img-fluid mx-auto d-block card-img-top", "crop" => "crop", "gravity"=>"custom"));
               }
               else{
-                $img = "";
-                $description = $recipe["description"];
+                $img = cl_image_tag(NO_IMAGE_RECIPE, array("class" => "img-fluid mx-auto d-block card-img-top", "crop" => "crop", "gravity"=>"custom"));
               }
               $output="";
   

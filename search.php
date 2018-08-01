@@ -117,7 +117,9 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
       foreach($results as $recipe){
         $output="";
         $user_name = $recipe["first_name"]." ".$recipe["last_name"];
-        $img = cl_image_tag($recipe["img"], array("class" => "img-fluid mx-auto d-block card-img-top", "width"=>250, "height"=>250, "background"=>"black", "crop"=>"pad"));
+        
+        $img = display_recipe_image($recipe["img"]);
+        
         if($recipes_counter%3 == 0){
             $output .= "</div>";
             $output .= "<div class = \"row bottom-distance-5 justify-content-center\">";
