@@ -1,14 +1,20 @@
 $(function(){
-     $('#add_step_button').click(function(e){
+    $('#add_step_button').click(function(e){
         //count the number of steps so far + 1
         var step_no = $('#recipe_steps .steps_input').length+1;
         
         //add input for the new step
-        //add input for the new step
-        var new_step = "<div id=\"new_step_div_" + step_no + "\" class=\"bottom-distance-5\">";
-        new_step += "<label for=\"new_step_"+step_no+"\" class=\"modal-text steps_input\">Step "+step_no+"</label><textarea class=\"form-control\" id=\"new_step_"+step_no+"\" name=\"new_step_"+step_no+"\" rows=\"3\"></textarea>";
-        new_step += "<br><button type=\"button\" class=\"btn btn-large btn-outline-danger\" onclick=\"RemoveStep(" + step_no +");\">Remove</button>";
-        new_step += "</div>";
+        var new_step = "<div class=\"form-row bottom-distance-5\" id=\"new_step_div_" + step_no +"\">";
+        
+        new_step += "<div class=\"form-group col-md-11\">";
+        new_step += "<label for=\"new_step_"+step_no+"\" class=\"modal-text steps_input\">Step "+"</label><textarea class=\"form-control\" id=\"new_step_"+step_no+"\" name=\"new_step_"+step_no+"\" rows=\"3\"></textarea>";
+        new_step += "</div>"; //end of column
+        
+        new_step+= "<div class=\"form-group col-md-1\">";
+        new_step += "<button type=\"button\" class=\"btn btn-large btn-outline-danger\" onclick=\"RemoveStep(" + step_no +");\">x</button>";
+        new_step += "</div>";//end of column
+        
+        new_step+= "</div>"; //end of row
         
         $('#recipe_steps').append(new_step);
         //alert($('#recipe_steps .steps_input').length);
@@ -17,11 +23,20 @@ $(function(){
      $('#add_note_button').click(function(e){
         //count the number of notes so far + 1
         var note_no = $('#recipe_notes .notes_input').length+1;
+        
         //add input for the new note
-        var new_note = "<div id=\"new_note_div_" + note_no + "\" class=\"bottom-distance-5\">";
-        new_note += "<label for=\"new_note_"+note_no+"\" class=\"modal-text notes_input\">Note "+note_no+"</label><textarea class=\"form-control\" id=\"new_note_"+note_no+"\" name=\"new_note_"+note_no+"\" rows=\"3\"></textarea>";
-        new_note += "<br><button type=\"button\" class=\"btn btn-large btn-outline-danger\" onclick=\"RemoveNote(" + note_no +");\">Remove</button>";
-        new_note += "</div>";
+        var new_note = "<div class=\"form-row bottom-distance-5\" id=\"new_note_div_" + note_no +"\">";
+        
+        new_note += "<div class=\"form-group col-md-11\">";
+        new_note += "<label for=\"new_note_"+note_no+"\" class=\"modal-text notes_input\">Note "+"</label><textarea class=\"form-control\" id=\"new_note_"+note_no+"\" name=\"new_note_"+note_no+"\" rows=\"3\"></textarea>";
+        new_note += "</div>"; //end of column
+        
+        new_note+= "<div class=\"form-group col-md-1\">";
+        new_note += "<button type=\"button\" class=\"btn btn-large btn-outline-danger\" onclick=\"RemoveNote(" + note_no +");\">x</button>";
+        new_note += "</div>";//end of column
+        
+        new_note+= "</div>"; //end of row
+        
         $('#recipe_notes').append(new_note);
         //alert($('#recipe_steps .steps_input').length);
      });

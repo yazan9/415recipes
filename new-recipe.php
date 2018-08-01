@@ -11,7 +11,7 @@ if (!is_logged_in()){
 }
 
 //upload image placeholder:
-$img = cl_image_tag("Placeholder");
+$img = cl_image_tag(NO_IMAGE_RECIPE);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -203,7 +203,7 @@ $(document).on('cloudinarywidgetfileuploadsuccess', function(e, data) {
 
   //event for the widget
   document.getElementById("upload_widget_opener").addEventListener("click", function() {
-    cloudinary.openUploadWidget({ cloud_name: 'dzv1zwbj5', upload_preset: 'z9mycu78'}, 
+    cloudinary.openUploadWidget({ cloud_name: 'dzv1zwbj5', upload_preset: 'z9mycu78', cropping: 'server', multiple: false, cropping_aspect_ratio: 1.0}, 
       function(error, result) { console.log(error, result) });
   }, false);
   

@@ -143,7 +143,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $img = mysqli_real_escape_string($dbc, $_POST['img']);
     }
     else{
-        $img = null;
+        $img = NO_IMAGE_RECIPE;
     }
     
     if(!empty($errors)){

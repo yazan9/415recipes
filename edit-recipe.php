@@ -48,7 +48,7 @@ if(mysqli_num_rows($r) == 1){
   $serves = $row["serves"];
   $img = $row["img"];
   $user_id = $row["user_id"];
-  $img = cl_image_tag($row["img"]);
+  $img = $row["img"];
   
   mysqli_free_result($r);
 }
@@ -103,8 +103,13 @@ if(!empty($errors)){
   exit();
 }
 
-//upload image placeholder:
-$img = cl_image_tag("Placeholder");
+//construct the image:
+if($img == ""){
+  $img = cl_image_tag(NO_IMAGE_RECIPE);
+}
+else{
+  $img = cl_image_tag($img);
+}
 
 ?>
 <!DOCTYPE html>
@@ -119,7 +124,7 @@ include "signup-modal.php";
 include "login-modal.php";
 
 ?>
-<script src="/js/edit_recipe.js?v=5"></script>
+<script src="/js/edit_recipe.js?v=6"></script>
     <div class="container-fluid">
     <div class="row justify-content-center align-items-center bottom-distance-5">
     </div>
@@ -135,7 +140,7 @@ include "login-modal.php";
     <div class="row justify-content-center bottom-distance-5">
         <div class="image_container">
         <div id="updated_img"><?php echo $img;?></div>
-        <a href="#" id="upload_widget_opener"><div class="black_bar align-items-center"><center>Update</center></div></a>
+        <a href="#" id="upload_widget_opener"><div class="full_image_click align-items-center"><center>Update</center></div></a>
         </div>
     </div>
     
@@ -248,10 +253,16 @@ include "login-modal.php";
     $step_counter = 1;
     foreach($steps as $step){
       //add input for the step
-      $new_step = "<div id=\"new_step_div_".$step_counter."\" class=\"bottom-distance-5\">";
-      $new_step .= "<label for=\"new_step_".$step_counter."\" class=\"modal-text steps_input\">Step ".$step_counter."</label><textarea class=\"form-control\" id=\"new_step_".$step_counter."\" name=\"new_step_".$step_counter."\" rows=\"3\">".$step."</textarea>";
-      $new_step .= "<br><button type=\"button\" class=\"btn btn-large btn-outline-danger\" onclick=\"RemoveStep($step_counter);\">Remove</button>";
-      $new_step .= "</div>";
+      $new_step = "<div class=\"form-row bottom-distance-5\" id=\"new_step_div_$step_counter\">";
+      $new_step .= "<div class=\"form-group col-md-11\">";
+      $new_step .= "<label for=\"new_step_".$step_counter."\" class=\"modal-text steps_input\">Step "."</label><textarea class=\"form-control\" id=\"new_step_".$step_counter."\" name=\"new_step_".$step_counter."\" rows=\"3\">".$step."</textarea>";
+      $new_step .= "</div>"; //end of column
+      
+      $new_step .= "<div class=\"form-group col-md-1\">";
+      $new_step .= "<button type=\"button\" class=\"btn btn-large btn-outline-danger remove_button\" onclick=\"RemoveStep($step_counter);\">x</button>";
+      $new_step .= "</div>"; //end of column
+      
+      $new_step .= "</div>"; //end of row
       echo $new_step;    
       
       $step_counter++;
@@ -273,10 +284,17 @@ include "login-modal.php";
     $note_counter = 1;
     foreach($notes as $note){
       //add input for the step
-      $new_note = "<div id=\"new_note_div_".$note_counter."\" class=\"bottom-distance-5\">";
-      $new_note .= "<label for=\"new_note_".$note_counter."\" class=\"modal-text notes_input\">Note ".$note_counter."</label><textarea class=\"form-control\" id=\"new_note_".$note_counter."\" name=\"new_note_".$note_counter."\" rows=\"3\">".$note."</textarea>";
-      $new_note .= "<br><button type=\"button\" class=\"btn btn-large btn-outline-danger\" onclick=\"RemoveNote($note_counter);\">Remove</button>";
-      $new_note .= "</div>";
+      $new_note = "<div class=\"form-row bottom-distance-5\" id=\"new_note_div_$note_counter\">";
+      
+      $new_note .= "<div class=\"form-group col-md-11\">";
+      $new_note .= "<label for=\"new_note_".$note_counter."\" class=\"modal-text notes_input\">Note "."</label><textarea class=\"form-control\" id=\"new_note_".$note_counter."\" name=\"new_note_".$note_counter."\" rows=\"3\">".$note."</textarea>";
+      $new_note .= "</div>"; //end of column
+      
+      $new_note .= "<div class=\"form-group col-md-1\">";
+      $new_note .= "<button type=\"button\" class=\"btn btn-large btn-outline-danger remove_button\" onclick=\"RemoveNote($note_counter);\">x</button>";
+      $new_note .= "</div>"; //end of column
+      
+      $new_note .= "</div>";//end of row
   
       echo $new_note;    
       
@@ -339,7 +357,7 @@ $(document).on('cloudinarywidgetfileuploadsuccess', function(e, data) {
 
   //event for the widget
   document.getElementById("upload_widget_opener").addEventListener("click", function() {
-    cloudinary.openUploadWidget({ cloud_name: 'dzv1zwbj5', upload_preset: 'z9mycu78'}, 
+    cloudinary.openUploadWidget({ cloud_name: 'dzv1zwbj5', upload_preset: 'z9mycu78', cropping: 'server', multiple: false, cropping_aspect_ratio: 1.0}, 
       function(error, result) { console.log(error, result) });
   }, false);
   

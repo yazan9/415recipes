@@ -109,6 +109,7 @@ include "login-modal.php";
     <div class="container-fluid">
         
     <div class="row justify-content-center align-items-center bottom-distance-5">
+      
     </div>
        
     <div class="row justify-content-center align-items-center bottom-distance-5">
@@ -219,6 +220,12 @@ include "login-modal.php";
     }
     
     ?>
+    
+    <div class="row justify-content-center align-items-center bottom-distance-5">
+    <?php if(recipe_belongs_to_user($recipe_id, $user_id, $dbc) == true)
+        echo "<a href=\"/edit-recipe.php?id=".$recipe_id."\" class=\"btn btn-primary mt-auto\">edit</a>";
+      ?>
+      </div>
        
   <div class="row bg-black">
               <div class="col-sm white-text"><br><br>© 415 Recipes 2018. All rights reserved</div>

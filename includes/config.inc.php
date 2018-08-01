@@ -16,6 +16,8 @@ define ('MYSQL', 'mysqli_connect.php');
 // Adjust the time zone for PHP 5.1 and greater:
 date_default_timezone_set ('US/Western');
 
+define('NO_IMAGE_RECIPE', 'pxmgurtqtqovctfatkst');
+
 // ************ SETTINGS ************ //
 // ********************************** //
 $time_units = array("Seconds", "Minutes", "Hours", "Days");
