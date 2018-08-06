@@ -17,7 +17,7 @@ $body = "<p>Thank you for registering with 415 Recipes! Please click on the link
     $mail->Port = 465; // or 587
     $mail->IsHTML(true);
     $mail->Username = "415recipes@gmail.com";
-    $mail->Password = "letmein415";
+    $mail->Password = "****";
     $mail->SetFrom("415recipes@gmail.com");
     $mail->Subject = "415Recipes Activation Code";
     $mail->Body = $body;
@@ -46,7 +46,7 @@ $body = "<p>Your temporary password is:</p><br><strong>{$password}</strong><br>P
     $mail->Port = 465; // or 587
     $mail->IsHTML(true);
     $mail->Username = "415recipes@gmail.com";
-    $mail->Password = "letmein415";
+    $mail->Password = "****";
     $mail->SetFrom("415recipes@gmail.com");
     $mail->Subject = "415Recipes Password Reset";
     $mail->Body = $body;
