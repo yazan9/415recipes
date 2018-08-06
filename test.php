@@ -1,4 +1,1 @@
-<?php
-echo "h";
-echo $_POST['first_name2'];
-?>
+<h1>this is a test html</h1>

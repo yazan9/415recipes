@@ -155,5 +155,15 @@
             width:100%;
             height: 100%;
         }
+        .comments-container{
+            margin-left:20%;
+            margin-right:20%;
+        }
+        .reply{
+            margin-left:10%;
+        }
+        .reply-text{
+            font-size:0.75em;
+        }
         
         </style>

@@ -22,7 +22,7 @@ $r = mysqli_query($dbc,$q) or trigger_error(mysqli_error($dbc));
 
 //if there is a match, read the result
 if(mysqli_num_rows($r) == 1){
-    list($id, $first_name, $last_name, $registration_date, $avatar)=
+    list($id, $first_name, $last_name, $registration_date, $db_avatar)=
     mysqli_fetch_array($r, MYSQLI_NUM);
     mysqli_free_result($r);
 }
@@ -32,8 +32,9 @@ else{
 }
 
 //process avatar image
-if($avatar!=NULL){
-    $avatar = cl_image_tag($avatar, array("transformation"=>array(
+
+if($db_avatar!=NULL){
+    $avatar = cl_image_tag($db_avatar, array("transformation"=>array(
   array("width"=>150, "height"=>150, "gravity"=>"face", "radius"=>"max", "crop"=>"fill"),
   array("width"=>150, "crop"=>"fill")
   )));
@@ -44,6 +45,7 @@ else{
   array("width"=>150, "crop"=>"fill")
   )));
 }
+
 //mysqli_close($dbc);
 ?>
 <?php
@@ -72,7 +74,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $avatar = mysqli_real_escape_string($dbc, $trimmed['avatar']);
     }
     else{
-        $avatar = null;
+        $avatar = $db_avatar;
     }
     
     //build the query:
@@ -84,6 +86,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     //check if an update was made:
     if($r){
         $success = "updated";
+        $_SESSION['first_name'] = $first_name;
+        $_SESSION['last_name'] = $last_name;
         header("Location:/view-profile.php?success=updated");
         exit();
     }

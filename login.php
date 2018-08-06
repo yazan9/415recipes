@@ -18,9 +18,7 @@ include "includes/header.php";
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="display-4">Login</h1>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        
       </div>
       <div class="modal-body">
         

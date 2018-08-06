@@ -140,6 +140,32 @@ function display_avatar_big($avatar, $username){
 	return $output;
 }
 
+function display_avatar_image_small($img, $username){
+	$output = "";
+	if($img!= NULL){
+		$output = "<div>".cl_image_tag($img, array("class" => "float-left margin-2","transformation"=>array(
+		array("width"=>48, "height"=>48, "gravity"=>"face", "radius"=>"max", "crop"=>"fill"),
+		array("width"=>48, "crop"=>"fill")
+	)))."</div>";
+	}
+	else{
+		//break the username into initials
+		$words = explode(" ", $username);
+		$initials = "";
+
+		foreach ($words as $w) {
+			$initials .= $w[0];
+		}
+		$initials = substr($initials, 0, 2);
+		
+		$output = "<div class=\"media\">
+                      <div class=\"avatar-circle center-elements-in-div\"><span class=\"initials\">".$initials."</span>
+                      </div>
+                    </div>";
+	}
+	return $output;
+}
+
 function display_recipe_image($image)
 {
 	$img = "";

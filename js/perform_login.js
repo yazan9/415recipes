@@ -40,7 +40,8 @@ $(function(){
             options.success = function(response){
                 //do something;
                 if(response == "success"){
-                    window.location.href = "/";
+                    //window.location.href = "/";
+                    location.reload();
                 }
                 else{
                     //there are errors

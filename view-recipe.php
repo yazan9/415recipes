@@ -221,12 +221,16 @@ include "login-modal.php";
     
     ?>
     
+    
     <div class="row justify-content-center align-items-center bottom-distance-5">
-    <?php if(recipe_belongs_to_user($recipe_id, $user_id, $dbc) == true)
-        echo "<a href=\"/edit-recipe.php?id=".$recipe_id."\" class=\"btn btn-primary mt-auto\">edit</a>";
+    <?php if(is_logged_in()==true && recipe_belongs_to_user($recipe_id, $_SESSION['user_id'], $dbc) == true)
+        echo "<a href=\"/edit-recipe.php?id=".$recipe_id."\" class=\"btn btn-primary mt-auto\">edit recipe</a>";
       ?>
       </div>
-       
+      
+      <?php include "_comments.php"?>
+
+      
   <div class="row bg-black">
               <div class="col-sm white-text"><br><br>© 415 Recipes 2018. All rights reserved</div>
               <div class="col-sm white-text"></div>
