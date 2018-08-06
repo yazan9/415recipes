@@ -31,7 +31,7 @@ require 'vendor/cloudinary/cloudinary_php/src/Api.php';
 \Cloudinary::config(array(
   "cloud_name" => "dzv1zwbj5", 
   "api_key" => "672873823841822", 
-  "api_secret" => "r2csBYQCb3R3cW0cPkc7OBKhCR4" 
+  "api_secret" => "*****" 
 ));
 
 
